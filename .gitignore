@@ -1,0 +1,22 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment (if used)
+.venv/
+env/
+venv/
+
+# VS Code settings (optional)
+.vscode/
+
+# Environment variables and secrets
+.env
+.streamlit/secrets.toml
+service_account.json
+
+# OS files (macOS, Windows)
+.DS_Store
+Thumbs.db
