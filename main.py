@@ -7,9 +7,7 @@ import time
 
 # ================= CONFIGURATION =================
 GOOGLE_SHEET_NAME = "Water_Body_Form_Responses"
-# SERVICE_ACCOUNT_FILE = "service_account.json"  # Your service account file path
 service_account_info = st.secrets["google_service_account"]
-# GEMINI_API_KEY = "AIzaSyCHFMGfIUYp98rwU_EcfyNf6BwXWQVw4VI"          # Your Gemini API key
 GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 SHEET_ID = "1UajWCygx78XEM6yyIxZsiMpC3HTgV7OjNb99bH8fGqk"  # Your Google Sheet ID
 
