@@ -7,8 +7,10 @@ import time
 
 # ================= CONFIGURATION =================
 GOOGLE_SHEET_NAME = "Water_Body_Form_Responses"
-SERVICE_ACCOUNT_FILE = "service_account.json"  # Your service account file path
-GEMINI_API_KEY = "AIzaSyCHFMGfIUYp98rwU_EcfyNf6BwXWQVw4VI"          # Your Gemini API key
+# SERVICE_ACCOUNT_FILE = "service_account.json"  # Your service account file path
+service_account_info = st.secrets["google_service_account"]
+# GEMINI_API_KEY = "AIzaSyCHFMGfIUYp98rwU_EcfyNf6BwXWQVw4VI"          # Your Gemini API key
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 SHEET_ID = "1UajWCygx78XEM6yyIxZsiMpC3HTgV7OjNb99bH8fGqk"  # Your Google Sheet ID
 
 ADMIN_PASSWORDS = {
@@ -30,7 +32,7 @@ def get_gsheet_data():
         "https://www.googleapis.com/auth/spreadsheets.readonly",
         "https://www.googleapis.com/auth/drive.readonly"
     ]
-    creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=scope)
+    creds = Credentials.from_service_account_info(dict(service_account_info), scopes=scope)
     client = gspread.authorize(creds)
     sheet = client.open_by_key(SHEET_ID).sheet1
     data = sheet.get_all_records()
