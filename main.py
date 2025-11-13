@@ -9,7 +9,7 @@ from datetime import datetime
 GOOGLE_SHEET_NAME = "Water_Body_Form_Responses"
 service_account_info = st.secrets["google_service_account"]
 GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
-SHEET_ID = "1UajWCygx78XEM6yyIxZsiMpC3HTgV7OjNb99bH8fGqk"
+SHEET_ID = st.secrets["SHEET_ID"]
 
 ADMIN_PASSWORDS = {
     "Delhi": "dlh_admin_123",
